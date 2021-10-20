@@ -2,21 +2,10 @@
 
 #include <stdio.h>
 
-int main()
+float BMI; //Declearing BMI as a "Global Variable"
+
+void feedBack ()
 {
-    float weight, height, BMI;
-    printf("Welcome in Body Mass Calculator !\n");
-    printf("\nEnter your 'Weight' in KGS: - ");
-    scanf("%f", &weight);
-    getchar();
-    printf("\nEnter your 'Height' in Meter: - ");
-    scanf("%f", &height);
-    getchar();
-
-    BMI= weight/(height*height); //Calculating the BMI
-
-    system("cls"); //For Screen Clear
-
     printf("Your BMI is : - %.2f\n", BMI); //Printing the Main BMI
 
     //Checking the Status
@@ -62,9 +51,30 @@ int main()
     }
 
     //Status Checking Complete
+}
+
+int main()
+{
+    float weight, height;
+    printf("Welcome in Body Mass Calculator !\n");
+    printf("\nEnter your 'Weight' in KGS: - ");
+    scanf("%f", &weight);
+    getchar();
+    printf("\nEnter your 'Height' in Meter: - ");
+    scanf("%f", &height);
+    getchar();
+
+    BMI= weight/(height*height); //Calculating the BMI
+
+    system("cls"); //For Screen Clear
+
+    if (BMI != 1 || BMI == 1)
+    {
+        feedBack();
+    }
 
     printf("\nThank You for using Body Mass Index Program!\n");
-    printf("\n\nPress any key to exit the program\n");
+    printf("\n\nPress ""Enter"" to exit the program\n");
     getchar(); //Closing the Program
     
     return 0;
